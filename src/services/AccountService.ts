@@ -29,19 +29,17 @@ export class AccountService {
     if (errors.length > 0) {
       throw new Error(errors.reduce((e, current) => !!e ? `${e}, ${current}` : current, ''));
     }
-    
 
-    
     await this._accountRepository.save(account);
-    
+
     return account;
   }
 
-  async update(id: string, { address, phone }: AccountUpdate): Promise<Account>  {
+  async update(id: string, { address, phone }: AccountUpdate): Promise<Account> {
     const account: Account = await this._accountRepository.findOne({
       id
     });
-    
+
     if (!account) {
       throw new Error("Conta não encontrada");
     }
@@ -64,7 +62,7 @@ export class AccountService {
     const account: Account = await this._accountRepository.findOne({
       id
     });
-    
+
     if (!account) {
       throw new Error("Conta não encontrada");
     }
