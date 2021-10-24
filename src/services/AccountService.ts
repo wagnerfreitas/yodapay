@@ -25,6 +25,7 @@ export class AccountService {
 
   async create(account: Account): Promise<Account> {
     account = this._accountRepository.create(account);
+    
     const errors = await this.validAccount(account);
     if (errors.length > 0) {
       throw new Error(errors.reduce((e, current) => !!e ? `${e}, ${current}` : current, ''));
@@ -82,6 +83,7 @@ export class AccountService {
     const acountExists = await this._accountRepository.findOne({
       cpf: account.cpf
     });
+    
     if (acountExists) {
       errors.push("Não é permitido cadastrar duas contas com o mesmo CPF.");
     }

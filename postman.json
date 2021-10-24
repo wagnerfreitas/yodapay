@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "32817fb2-4dc6-42b7-82ff-a375ae1e2c87",
+    "name": "yodapay",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All",
+      "id": "8e81662d-93cf-4d6d-aeac-485ce9d71391",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}/accounts"
+      },
+      "response": []
+    },
+    {
+      "name": "Create",
+      "id": "555bdbe0-f324-4813-ad51-3c7ed0331799",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cpf\": \"90081443013\",\r\n    \"name\": \"Conta\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/accounts"
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "id": "9f6b8420-6a6c-48ec-a69f-9d1911fa8dba",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"phone\": \"85999776655\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/accounts/1d0d239a-0ad9-4004-a478-1d212370b254"
+      },
+      "response": []
+    },
+    {
+      "name": "Disable",
+      "id": "9476b036-024f-45a0-bb69-359a81f76b5e",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": "{{host}}/accounts/1d0d239a-0ad9-4004-a478-1d212370b254/disable"
+      },
+      "response": []
+    },
+    {
+      "name": "Activate",
+      "id": "7e4bfec0-21d9-405f-b9d1-8c5e8c93d882",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": "{{host}}/accounts/1d0d239a-0ad9-4004-a478-1d212370b254/activate"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "id": "b222da32-d6a5-472e-b32c-2d009da04149",
+      "key": "host",
+      "value": "localhost:3333"
+    }
+  ]
+}

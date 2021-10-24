@@ -14,10 +14,10 @@ export class Account {
   cpf: string;
 
   @Column()
-  phone: string;
+  phone?: string;
 
   @Column()
-  address: string;
+  address?: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
